@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package acme.manager.v1;
-
-enum Manager {
-  MANAGER_UNSPECIFIED = 0;
-  MANAGER_SUNNY = 1;
-  MANAGER_RAINY = 2;
-}

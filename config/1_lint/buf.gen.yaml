@@ -21,4 +21,4 @@ plugins:
     out: internal/controller/grpc/proto
     opt: paths=source_relative
 inputs:
-  - directory: source/0_generate
+  - directory: source/1_lint/proto

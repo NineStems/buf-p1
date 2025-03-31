@@ -1,0 +1,14 @@
+# For details on buf.yaml configuration, visit https://buf.build/docs/configuration/v2/buf-yaml
+version: v2
+### got extra deps
+deps:
+  - buf.build/grpc-ecosystem/grpc-gateway
+  - buf.build/googleapis/googleapis
+modules:
+  - path: source/1_lint/proto
+# Настройки линтинга (опционально, но рекомендуется)
+lint:
+  use:
+    - STANDARD  # Базовый набор правил
+  #except:
+  #  - PACKAGE_DIRECTORY_MATCH  # Отключить проверку совпадения пути и пакета (если структура каталогов не совпадает)

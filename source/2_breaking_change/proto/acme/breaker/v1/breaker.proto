@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package acme.breaker.v1;
+
+message GetBreakerRequest {
+  float latitude = 1;
+  float longitude = 2;
+}
+
+message GetBreakerResponse {
+  float temperature = 1;
+  int32 age = 2;
+  string name = 3;
+  repeated string locations = 4 [deprecated = true];
+  //reserved 4;
+  //reserved "locations";
+}
+
+service BreakerService {
+  rpc GetBreaker (GetBreakerRequest) returns (GetBreakerResponse);
+}

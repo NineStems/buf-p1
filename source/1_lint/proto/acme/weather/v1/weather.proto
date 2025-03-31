@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package weather;
+
+enum ConditionLint {
+  SUNNY = 0;
+  RAINY = 1;
+}
+
+message LocationLint {
+  float latitude = 1;
+  float longitude = 2;
+}
+
+message GetWeatherLintResponse {
+  float temperature = 1;
+  ConditionLint conditions = 2;
+}
+
+service WeatherLintService {
+  rpc GetLintWeather (LocationLint) returns (GetWeatherLintResponse);
+}
