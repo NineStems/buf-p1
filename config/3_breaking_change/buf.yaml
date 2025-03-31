@@ -1,0 +1,25 @@
+# For details on buf.yaml configuration, visit https://buf.build/docs/configuration/v2/buf-yaml
+version: v2
+### got extra deps
+deps:
+  - buf.build/grpc-ecosystem/grpc-gateway
+  - buf.build/googleapis/googleapis
+modules:
+  - path: source/0_generate
+# Настройки линтинга (опционально, но рекомендуется)
+lint:
+  use:
+    - DEFAULT  # Базовый набор правил
+  except:
+    - PACKAGE_DIRECTORY_MATCH  # Отключить проверку совпадения пути и пакета (если структура каталогов не совпадает)
+# Настройки проверки обратной совместимости
+breaking:
+  use:  # Какие правила проверки использовать
+    - FILE  # Проверять изменения на уровне файлов (рекомендуемый базовый уровень)
+
+  # ИЛИ можно явно указать конкретные правила:
+  # against_input:  # Альтернативный подход - сравнение с исходным состоянием
+  #   source:
+  #     branch: main  # Сравнивать с веткой main
+  #   exclude:  # Исключить из проверки
+  #     - acme/weather/v1/weatcher.proto  # Если есть временные исключения
