@@ -6,4 +6,5 @@ enum Manager {
   MANAGER_UNSPECIFIED = 0;
   MANAGER_SUNNY = 1;
   MANAGER_RAINY = 2;
+  MANAGER_EXTRA = 3;
 }
